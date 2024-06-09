@@ -18,8 +18,16 @@ type Config struct {
 	RedisDB   int
 }
 
+// Loader defines an interface for loading configuration settings.
+type Loader interface {
+	LoadConfig() *Config
+}
+
+// ViperLoader implements Loader interface using viper.
+type ViperLoader struct{}
+
 // LoadConfig loads configuration settings from a config file and environment variables.
-func LoadConfig() *Config {
+func (v *ViperLoader) LoadConfig() *Config {
 	viper.SetConfigName("config")
 	viper.AddConfigPath(".")
 	viper.AutomaticEnv()

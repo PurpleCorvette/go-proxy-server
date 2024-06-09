@@ -2,10 +2,25 @@
 package logger
 
 import (
-	"github.com/sirupsen/logrus"
 	"os"
+
+	"github.com/sirupsen/logrus"
 )
 
+// Logger defines an interface for logging.
+type Logger interface {
+	Infof(format string, args ...interface{})
+	Debugf(format string, args ...interface{})
+	Warnf(format string, args ...interface{})
+	Fatalf(format string, args ...interface{})
+}
+
+// LogrusLogger is an implementation of Logger using logrus.
+type LogrusLogger struct {
+	*logrus.Logger
+}
+
+// NewLogger initializes a new logrus logger with the specified log level.
 func NewLogger(level string) *logrus.Logger {
 	logger := logrus.New()
 	logger.SetFormatter(&logrus.JSONFormatter{})
