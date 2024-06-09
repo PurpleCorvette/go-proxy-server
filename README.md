@@ -1,1 +1,1 @@
-# GO-PROXY-SERVER
+# Go gRPC Proxy Server
