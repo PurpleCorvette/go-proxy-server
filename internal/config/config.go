@@ -26,6 +26,11 @@ type Loader interface {
 // ViperLoader implements Loader interface using viper.
 type ViperLoader struct{}
 
+// NewViperLoader returns a new instance of ViperLoader.
+func NewViperLoader() *ViperLoader {
+	return &ViperLoader{}
+}
+
 // LoadConfig loads configuration settings from a config file and environment variables.
 func (v *ViperLoader) LoadConfig() *Config {
 	viper.SetConfigName("config")
