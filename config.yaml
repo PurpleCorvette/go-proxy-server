@@ -1,9 +1,0 @@
-port: "8080"
-log_level: "info"
-servers:
-  - "localhost:50051"
-  - "localhost:50052"
-jwt_secret: "7zFuCeQ/+FZ2fnRLIUvV5c1GpWNoc1Q/eBZkrDNZHTg="
-redis_adr: "localhost:6379"
-redis_pass: "RedisPass1234"
-redis_db: 0
