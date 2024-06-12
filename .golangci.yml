@@ -1,0 +1,15 @@
+linters:
+  enable:
+    - govet
+    - errcheck
+    - staticcheck
+    - unused
+    - gosimple
+    - gocyclo
+    - gofmt
+    - gosec
+    - misspell
+
+issues:
+  exclude:
+    - "Error return value of .((os|io).(Write|WriteString|WriteFile|Copy|Close)|.*(printf?|log|Fatalf?|Errorf?)) is not checked"
